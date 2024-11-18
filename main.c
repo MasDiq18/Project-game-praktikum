@@ -40,10 +40,37 @@ int menu(){
 }
 
 
-int main(){
 int main(int argc, char *argv[]){
 // Badan utama jalannya program
+    if(argc == 0){
+        //Untuk menampilkan menu awal
+        
 
+        //Tanyakan pada user apakah sudah memiliki akun
+
+    }
+
+    if(argc == 1){
+        if(argv[1] == 'register' ){
+            //Untuk register
+            registeruser();
+        }
+        else if(argv[1] == 'login'){
+            //Untuk login
+            loginuser();
+
+
+            int loggedin;
+            //Kalau login berhasil, beralih ke menu
+        }
+        else{
+            //Kalau user memasukkan format yang tidak sesuai
+            printf("Silahkan masuk sesuai format yang berlaku\n");
+            printf("* ./main register bagi pengguna baru \n");
+            printf("* ./main login bagi yang sudah register \n");
+
+        }
+    }
 
 return 0;
 }
