@@ -41,6 +41,7 @@ int menu(){
 
 
 int main(){
+int main(int argc, char *argv[]){
 // Badan utama jalannya program
 
 
