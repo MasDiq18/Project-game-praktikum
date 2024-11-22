@@ -7,19 +7,28 @@ typedef struct
 // struct untuk menyimpan username dan password    
     char username[50];
     char password[50];
-}login ;
+} login;
 
 void registeruser(){
 // Fungsi untuk register
-
 FILE *file;
 file= fopen("database/login.bin","ab");
 if(file == NULL){
     printf("Gagal membuka file");
+    return;
 }
-fclose(file);
-}
+    login User;
+    printf(">>> Register <<<\n");
+    printf("Masukkan username: ");
+        scanf("%s", User.username);
+    printf("Masukkan password: ");
+        scanf("%s", User.password);
 
+    fwrite(&User, sizeof(login), 1, file);
+        fclose(file);
+        printf("Registrasi berhasil! Silakan login.\n");
+
+}
 int loginuser(){
 // Fungsi login
 
