@@ -18,7 +18,9 @@ if(file == NULL){
     return;
 }
     login User;
-    printf(">>> Register <<<\n");
+    printf("================\n:);
+    printf("=   Register   =\n");
+    printf("================\n");
     printf("Masukkan username: ");
         scanf("%s", User.username);
     printf("Masukkan password: ");
