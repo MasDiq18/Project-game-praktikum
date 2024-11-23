@@ -38,6 +38,29 @@ int loginuser(){
 
 void startquiz(){
 // Fungsi untuk mulai quiz
+    printf("=========================\n");
+    printf("=   Quiz mulai disini   =\n");
+    printf("=========================\n"):
+}
+
+int main( int argc, char *argv[]){
+    if(argc == 1){
+        printf("Udah punya akun? ");
+    }
+    else if( argc == 2){
+        if(strcmp(argv[1] , "login") == 0){
+            loginuser();
+            int loginsucces;
+            if(loginsucces== 1){
+                mulaiquiz();}
+            }
+        else if(strcmp(argv[1], "register") == 0){
+            registeruser();
+        }    
+    } 
+    else{
+        printf("Gunakan format sesuai!");
+    }
 
 }
 
