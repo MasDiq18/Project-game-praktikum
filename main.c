@@ -85,9 +85,79 @@ void mulaiquiz() {
     switch (soal)
     {
     case 1:
+        printf("Fakta Unik Dunia:\n");
+        printf("1. Apa nama tempat dengan suhu terendah yang pernah tercatat di bumi?\n");
+        printf("   a. Death Valley\n");
+        printf("   b. Oymyakon\n");
+        printf("   c. Vostok Station\n");
+        printf("   d. Sahara\n");
+        printf("   Jawaban: c\n\n");
+
+        printf("2. Di negara mana terletak gunung tertinggi di dunia, Mount Everest?\n");
+        printf("   a. Nepal\n");
+        printf("   b. India\n");
+        printf("   c. China\n");
+        printf("   d. Bhutan\n");
+        printf("   Jawaban: a\n\n");
+
+        printf("3. Apa nama gurun pasir terbesar di dunia?\n");
+        printf("   a. Gurun Sahara\n");
+        printf("   b. Gurun Gobi\n");
+        printf("   c. Gurun Kalahari\n");
+        printf("   d. Gurun Atacama\n");
+        printf("   Jawaban: a\n\n");
+
+        printf("4. Berapa persen permukaan bumi yang tertutup oleh air?\n");
+        printf("   a. 50%%\n");
+        printf("   b. 60%%\n");
+        printf("   c. 70%%\n");
+        printf("   d. 80%%\n");
+        printf("   Jawaban: c\n\n");
+
+        printf("5. Negara mana yang memiliki garis pantai terpanjang di dunia?\n");
+        printf("   a. Amerika Serikat\n");
+        printf("   b. Kanada\n");
+        printf("   c. Indonesia\n");
+        printf("   d. Australia\n");
+        printf("   Jawaban: b\n");
         
         break;
     case 2:
+        printf("Fakta Unik Manusia:\n");
+        printf("1. Berapa jumlah tulang pada tubuh manusia dewasa?\n");
+        printf("   a. 206\n");
+        printf("   b. 208\n");
+        printf("   c. 210\n");
+        printf("   d. 212\n");
+        printf("   Jawaban: a\n\n");
+
+        printf("2. Organ apa yang terus tumbuh sepanjang hidup manusia?\n");
+        printf("   a. Hati\n");
+        printf("   b. Hidung dan telinga\n");
+        printf("   c. Otak\n");
+        printf("   d. Paru-paru\n");
+        printf("   Jawaban: b\n\n");
+
+        printf("3. Apa organ terbesar dalam tubuh manusia?\n");
+        printf("   a. Hati\n");
+        printf("   b. Kulit\n");
+        printf("   c. Usus halus\n");
+        printf("   d. Paru-paru\n");
+        printf("   Jawaban: b\n\n");
+
+        printf("4. Berapa persen otak manusia terdiri dari air?\n");
+        printf("   a. 50%%\n");
+        printf("   b. 60%%\n");
+        printf("   c. 70%%\n");
+        printf("   d. 80%%\n");
+        printf("   Jawaban: d\n\n");
+
+        printf("5. Berapa rata-rata detak jantung manusia per menit saat istirahat?\n");
+        printf("   a. 50–60 bpm\n");
+        printf("   b. 60–100 bpm\n");
+        printf("   c. 100–120 bpm\n");
+        printf("   d. 120–140 bpm\n");
+        printf("   Jawaban: b\n");
 
         break;
     default:
