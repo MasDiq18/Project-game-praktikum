@@ -43,7 +43,10 @@ int loginuser() {
     char password[16];
     int loginsucces = 0;
     login user;
-
+    
+    printf("==================\n");
+    printf("=     login      =\n");
+    printf("==================\n");
     printf("Username: ");
     scanf("%15s", username);
     printf("Password: ");
@@ -70,8 +73,10 @@ int loginuser() {
 void mulaiquiz() {
     char username[16];
     char password[16];
-    printf("=====Who Wants to be A Billionaire=====\n");
-    printf("====    Selamat datang,    ======\n");
+    printf("=====================================\n");
+    printf("=   Who Wants to be A Billionaire   =\n");
+    printf("=          Selamat datang,          =\n");
+    printf("=====================================\n");
     printf("Silahkan pilih jenis soal yang anda kuasai: \n");
     printf("1) \n");
     printf("2) \n");
@@ -97,8 +102,10 @@ void mulaiquiz() {
 int main(int argc, char *argv[]) {
     if (argc == 1) {
         int akun;
-        printf("====    Selamat datang di quiz  ======\n");
-        printf("=====Who Wants to be A Billionaire=====\n");
+        printf("======================================\n");
+        printf("=        Selamat datang di quiz      =\n");
+        printf("=    Who Wants to be A Billionaire   =\n");
+        printf("======================================\n");
         printf("Sebelumnya, apakah pemain sudah punya akun?\n");
         printf("1) Sudah\n");
         printf("2) Belum\n");
