@@ -40,7 +40,7 @@ void startquiz(){
 // Fungsi untuk mulai quiz
     printf("=========================\n");
     printf("=   Quiz mulai disini   =\n");
-    printf("=========================\n"):
+    printf("=========================\n");
 }
 
 int main( int argc, char *argv[]){
