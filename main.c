@@ -68,12 +68,56 @@ int loginuser() {
 }
 
 void mulaiquiz() {
-    printf("Quiz mulai disini\n");
+    char username[16];
+    char password[16];
+    printf("=====Who Wants to be A Billionaire=====\n");
+    printf("====    Selamat datang,    ======\n");
+    printf("Silahkan pilih jenis soal yang anda kuasai: \n");
+    printf("1) \n");
+    printf("2) \n");
+    int soal;
+    scanf("%d", &soal);
+    switch (soal)
+    {
+    case 1:
+        
+        break;
+    case 2:
+
+        break;
+    default:
+        printf("Hanya ada pilihan satu ataupun dua, pilih hanya salah satu \n");
+        break;
+    }
+
+
+    
 }
 
 int main(int argc, char *argv[]) {
     if (argc == 1) {
-        printf("Udah punya akun? Gunakan 'register' untuk mendaftar atau 'login' untuk masuk.\n");
+        int akun;
+        printf("====    Selamat datang di quiz  ======\n");
+        printf("=====Who Wants to be A Billionaire=====\n");
+        printf("Sebelumnya, apakah pemain sudah punya akun?\n");
+        printf("1) Sudah\n");
+        printf("2) Belum\n");
+        
+        scanf("%d",&akun);
+        switch (akun)
+        {
+        case 1:
+            printf(" Jalankan kembali program dengan menggunakan format'./main register' untuk mendaftar\n");
+            break;
+        case 2:
+            printf("Jalankan kembali program dengan menggunakan format './main login' untuk masuk.\n");
+            break;
+        default:
+            printf("Gunakan format yang sesuai.\n");
+            break;
+        }
+        
+           
     } else if (argc == 2) {
         if (strcmp(argv[1], "login") == 0) {
             int loginsucces = loginuser();
