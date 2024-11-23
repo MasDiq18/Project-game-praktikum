@@ -5,8 +5,8 @@
 typedef struct
 {
 // struct untuk menyimpan username dan password    
-    char username[50];
-    char password[50];
+    char username[16];
+    char password[16];
 } login;
 
 void registeruser(){
@@ -22,89 +22,72 @@ if(file == NULL){
     printf("=   Register   =\n");
     printf("================\n");
     printf("Masukkan username: ");
-        scanf("%s", User.username);
+        scanf("%15s", User.username);
     printf("Masukkan password: ");
-        scanf("%s", User.password);
+        scanf("%15s", User.password);
 
     fwrite(&User, sizeof(login), 1, file);
         fclose(file);
         printf("Registrasi berhasil! Silakan login.\n");
 
 }
-int loginuser(){
-// Fungsi login
+int loginuser() {
+    FILE *file;
+    file = fopen("database/login.bin", "rb");
 
-}
-
-void startquiz(){
-// Fungsi untuk mulai quiz
-    printf("=========================\n");
-    printf("=   Quiz mulai disini   =\n");
-    printf("=========================\n");
-}
-
-int main( int argc, char *argv[]){
-    if(argc == 1){
-        printf("Udah punya akun? ");
-    }
-    else if( argc == 2){
-        if(strcmp(argv[1] , "login") == 0){
-            loginuser();
-            int loginsucces;
-            if(loginsucces== 1){
-                mulaiquiz();}
-            }
-        else if(strcmp(argv[1], "register") == 0){
-            registeruser();
-        }    
-    } 
-    else{
-        printf("Gunakan format sesuai!");
+    if (file == NULL) {
+        printf("Gagal membuka file\n");
+        return 0;
     }
 
-}
+    char username[16];
+    char password[16];
+    int loginsucces = 0;
+    login user;
 
-int rulesquiz(){
-// Fungsi untuk memunculkan peraturan game  
+    printf("Username: ");
+    scanf("%15s", username);
+    printf("Password: ");
+    scanf("%15s", password);
 
-}
-
-int menu(){
+    while (fread(&user, sizeof(login), 1, file)) {
+        if (strcmp(user.username, username) == 0 && strcmp(user.password, password) == 0) {
+            loginsucces = 1;
+            break; // Keluar dari loop jika login berhasil
+        }
+    }
     
+    fclose(file);
+    
+    if (loginsucces) {
+        printf("Login berhasil!\n");
+    } else {
+        printf("Coba lagi!\n");
+    }
+    
+    return loginsucces;
 }
 
+void mulaiquiz() {
+    printf("Quiz mulai disini\n");
+}
 
-int main(int argc, char *argv[]){
-// Badan utama jalannya program
-    if(argc == 0){
-        //Untuk menampilkan menu awal
-        
-
-        //Tanyakan pada user apakah sudah memiliki akun
-
-    }
-
-    if(argc == 1){
-        if(argv[1] == 'register' ){
-            //Untuk register
+int main(int argc, char *argv[]) {
+    if (argc == 1) {
+        printf("Udah punya akun? Gunakan 'register' untuk mendaftar atau 'login' untuk masuk.\n");
+    } else if (argc == 2) {
+        if (strcmp(argv[1], "login") == 0) {
+            int loginsucces = loginuser();
+            if (loginsucces == 1) {
+                mulaiquiz();
+            }
+        } else if (strcmp(argv[1], "register") == 0) {
             registeruser();
+        } else {
+            printf("Perintah tidak dikenali. Gunakan 'login' atau 'register'.\n");
         }
-        else if(argv[1] == 'login'){
-            //Untuk login
-            loginuser();
-
-
-            int loggedin;
-            //Kalau login berhasil, beralih ke menu
-        }
-        else{
-            //Kalau user memasukkan format yang tidak sesuai
-            printf("Silahkan masuk sesuai format yang berlaku\n");
-            printf("* ./main register bagi pengguna baru \n");
-            printf("* ./main login bagi yang sudah register \n");
-
-        }
+    } else {
+        printf("Gunakan format sesuai!\n");
     }
-
-return 0;
+    return 0;
 }
