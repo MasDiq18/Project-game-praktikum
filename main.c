@@ -1,36 +1,35 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-typedef struct
-{
-// struct untuk menyimpan username dan password    
+typedef struct {
     char username[16];
     char password[16];
 } login;
 
-void registeruser(){
-// Fungsi untuk register
-FILE *file;
-file= fopen("database/login.bin","ab");
-if(file == NULL){
-    printf("Gagal membuka file");
-    return;
-}
+void registeruser() {
+    // Fungsi untuk register
+    FILE *file;
+    file = fopen("database/login.bin", "ab");
+    if (file == NULL) {
+        printf("Gagal membuka file\n");
+        return;
+    }
+    
     login User;
-    printf("================\n:);
+    printf("================\n");
     printf("=   Register   =\n");
     printf("================\n");
     printf("Masukkan username: ");
-        scanf("%15s", User.username);
+    scanf("%15s", User.username);
     printf("Masukkan password: ");
-        scanf("%15s", User.password);
+    scanf("%15s", User.password);
 
-    fwrite(&User, sizeof(login), 1, file);
-        fclose(file);
-        printf("Registrasi berhasil! Silakan login.\n");
-
+    fwrite(&User , sizeof(login), 1, file);
+    fclose(file);
+    printf("Registrasi berhasil! Silakan login.\n");
 }
+
 int loginuser() {
     FILE *file;
     file = fopen("database/login.bin", "rb");
