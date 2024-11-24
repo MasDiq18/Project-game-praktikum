@@ -98,6 +98,15 @@ int loginuser() {
     return loginsucces;
 }
 
+void peraturan(){
+    printf("============== Peraturan Quiz Who Wants to Be Millionaire ==============\n");
+    printf("1.Quiz ini terdiri dari 2 tipe soal dimana user bebas memilih jenis soal\n");
+    printf("2.Setiap soal memiliki bobot hadiah yang meningkat, diiringi dengan soal yang semakin susah\n");
+    printf("3.Jika pemain salah dalam menjawab soal, maka ia tidak bisa melanjutkan soal berikutnya dan hanya membawa pulang hadiah sesuai jumlah soal yang dijawab\n");
+    printf("4. Tidak ada fitur bantuan dalam game ini, pemain hanya bergantung pada pengetahuannya\n");
+    printf("========================================================================\n");
+}
+
 void mulaiquiz() {
     int skor = 0;
     int jawabanBenar;
