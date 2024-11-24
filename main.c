@@ -251,6 +251,36 @@ void mulaiquiz() {
     printf("\nQuiz selesai! Total uang yang anda dapatkan adalah: Rp.%d\n", skor);
 }
 
+int menu(){
+    int choice;
+    int loggedIn = 0;
+
+        do {
+            printf("\n=== Menu ===\n");
+            printf("1. Mulai Quiz\n");
+            printf("2. Peraturan Quiz\n");
+            printf("3. Keluar\n");
+            printf("Pilihan Anda: ");
+            scanf("%d", &choice);
+
+            switch (choice) {
+                case 1:
+                    mulaiquiz();
+                    break;
+                case 2:
+                    peraturan();
+                    break;
+                case 3:
+                    printf("Terima kasih telah menggunakan program ini!\n");
+                    break;    
+                default:
+                    printf("Pilihan tidak valid.\n");
+            }
+        } while (choice != 3);
+    
+
+    return 0;
+}
 
 int main(int argc, char *argv[]) {
     if (argc == 1) {
