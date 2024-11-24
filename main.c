@@ -99,12 +99,12 @@ int loginuser() {
 }
 
 void peraturan(){
-    printf("============== Peraturan Quiz Who Wants to Be Millionaire ==============\n");
+    printf("========================== Peraturan Super Quiz 24 ==========================\n");
     printf("1.Quiz ini terdiri dari 2 tipe soal dimana user bebas memilih jenis soal\n");
     printf("2.Setiap soal memiliki bobot hadiah yang meningkat, diiringi dengan soal yang semakin susah\n");
     printf("3.Jika pemain salah dalam menjawab soal, maka ia tidak bisa melanjutkan soal berikutnya dan hanya membawa pulang hadiah sesuai jumlah soal yang dijawab\n");
     printf("4. Tidak ada fitur bantuan dalam game ini, pemain hanya bergantung pada pengetahuannya\n");
-    printf("========================================================================\n");
+    printf("==============================================================================\n");
 }
 
 void mulaiquiz() {
@@ -112,7 +112,7 @@ void mulaiquiz() {
     int jawabanBenar;
 
     printf("=====================================\n");
-    printf("=   Who Wants to be A Millionaire   =\n");
+    printf("=           Super Quiz 24           =\n");
     printf("=====================================\n");
     printf("Silakan pilih jenis soal yang Anda kuasai:\n");
     printf("1) Fakta Unik Dunia\n");
@@ -295,8 +295,8 @@ int main(int argc, char *argv[]) {
     if (argc == 1) {
         int akun;
         printf("======================================\n");
-        printf("=        Selamat datang di quiz      =\n");
-        printf("=    Who Wants to be A Millionaire   =\n");
+        printf("=            Selamat datang di       =\n");
+        printf("=            Super Quiz 24           =\n");
         printf("======================================\n");
         printf("Apakah Anda sudah memiliki akun?\n");
         printf("1) Sudah\n");
@@ -318,7 +318,7 @@ int main(int argc, char *argv[]) {
         if (strcmp(argv[1], "login") == 0) {
             int loginsucces = loginuser();
             if (loginsucces) {
-                mulaiquiz();
+                menu();
             }
         } else if (strcmp(argv[1], "register") == 0) {
             registeruser();
