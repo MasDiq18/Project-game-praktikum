@@ -7,6 +7,23 @@ typedef struct {
     char password[16];
 } login;
 
+int isUsernameDuplicate(char *username){
+    FILE *file = fopen("database/login.bin", "rb");
+    if(file == NULL){
+        printf("Gagal membuka file!"); //anggap username sudah digunakan
+        return 1;
+    }
+    login user;
+    while(fread(&user, sizeof(login), 1, file)){
+        if(strcmp(user.username , username)== 0){
+            fclose(file);
+            return 1;
+        }
+    }
+    fclose(file);
+    return 0;
+}
+
 void registeruser() {
     // Fungsi untuk register
     FILE *file;
@@ -16,16 +33,27 @@ void registeruser() {
         return;
     }
     
-    login User;
+    login newuser;
     printf("================\n");
     printf("=   Register   =\n");
     printf("================\n");
-    printf("Masukkan username: ");
-    scanf("%15s", User.username);
-    printf("Masukkan password: ");
-    scanf("%15s", User.password);
 
-    fwrite(&User, sizeof(login), 1, file);
+    while(1){
+        printf("Masukkan username: ");
+        scanf("%15s", newuser.username);
+
+        if(isUsernameDuplicate(newuser.username)){
+            printf("Username tersebut sudah digunakan\n");
+            printf("coba lagi dengan username yang berbeda\n");
+        }else{
+            break;
+            }
+    }
+
+    printf("Masukkan password: ");
+    scanf("%15s", newuser.password);
+
+    fwrite(&newuser, sizeof(login), 1, file);
     fclose(file);
     printf("Registrasi berhasil! Silakan login.\n");
 }
